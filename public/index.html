@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Analogize — Make It Make Sense</title>
+<link rel="manifest" href="/manifest.json" />
+<link rel="icon" href="/icons/icon-192.png" />
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+<meta name="theme-color" content="#0f1115" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Analogize" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Analogize</h1>
+      <p class="tagline">Turn any complex work situation into an everyday analogy, instantly.</p>
+    </header>
+
+    <main>
+      <form id="form">
+        <label for="situation">Describe the business or occupational situation</label>
+        <textarea id="situation" maxlength="4000" rows="6"
+          placeholder="e.g. Our supply chain has too many single points of failure because we rely on one vendor for a critical component..."></textarea>
+        <button type="submit" id="submitBtn">Get analogies</button>
+      </form>
+
+      <div id="error" class="error" hidden></div>
+
+      <div id="loading" class="loading" hidden>
+        <div class="spinner"></div>
+        <span>Finding the right analogies...</span>
+      </div>
+
+      <section id="results" class="results" hidden></section>
+    </main>
+
+    <footer>
+      <p>Analogize uses AI and may occasionally be imprecise. Free tier limited to 10 requests/min.</p>
+    </footer>
+  </div>
+
+  <template id="resultTemplate">
+    <article class="card">
+      <div class="card-head">
+        <h2 class="card-title"></h2>
+        <div class="card-actions">
+          <button class="iconBtn copyBtn" title="Copy to clipboard">Copy</button>
+          <button class="iconBtn speakBtn" title="Read aloud">🔊 Listen</button>
+        </div>
+      </div>
+      <p class="card-text"></p>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

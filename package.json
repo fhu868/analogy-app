@@ -1,0 +1,14 @@
+{
+  "name": "analogy-app",
+  "version": "1.0.0",
+  "description": "Turn complex business/occupational situations into everyday analogies",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "@anthropic-ai/sdk": "^0.27.0",
+    "dotenv": "^16.4.5"
+  }
+}
